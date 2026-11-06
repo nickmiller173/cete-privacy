@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["D9YV966VHT.com.apps.cete"],
+        "components": [{ "/": "/i/*", "comment": "Invite links" }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're invited to Cete</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #F7F1E8; --card: #FFFFFF; --beige: #E8DCC8; --ink: #3B2A20; --ink2: #7A6656; --link: #6B4A33; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1A1411; --card: #241C17; --beige: #3A2E25; --ink: #F3EADF; --ink2: #B9A898; --link: #E3CFAF; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Geist, -apple-system, system-ui, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 16px 64px; }
+  .card { background: var(--card); border: 1px solid var(--beige); border-radius: 20px; padding: 28px 24px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 4px; font-weight: 600; }
+  h2 { font: 500 12px/1.4 "Geist Mono", ui-monospace, monospace; letter-spacing: 1.2px; text-transform: uppercase;
+        color: var(--ink2); margin: 32px 0 8px; }
+  .date { color: var(--ink2); margin-top: 0; }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  a { color: var(--link); }
+</style>
+</head>
+<body>
+<main><div class="card">
+<h1>You're invited to Cete</h1>
+<p class="date" id="from">Someone wants to stay in touch with you on Cete.</p>
+<p>Cete helps friends and family stay close: see when your people are free to talk, never miss a
+birthday, and keep memories together in small private groups.</p>
+<h2>1. Get the app</h2>
+<p><a href="https://apps.apple.com/us/app/cete-badger-your-friends/id6825114917"><strong>Download Cete on the App Store</strong></a> (iPhone)</p>
+<h2>2. Enter your code</h2>
+<p id="code-step">Sign up, go to <strong>Connections</strong>, tap <strong>I have an invite code</strong> and enter:</p>
+<p id="code" style="font: 600 32px/1.2 'Geist Mono', ui-monospace, monospace; letter-spacing: 2px;"></p>
+<p class="date">Or come back and tap the link again once Cete is installed.</p>
+<script>
+  var match = location.pathname.match(/^\/i\/([A-Za-z0-9-]{8,9})\/?$/);
+  if (match) {
+    document.getElementById("code").textContent = match[1].toUpperCase();
+  } else {
+    document.querySelector("h1").textContent = "Page not found";
+    document.getElementById("from").textContent = "There's nothing at this address.";
+    document.getElementById("code-step").textContent = "If someone sent you an invite, check the link, or ask them for the code.";
+  }
+</script>
+</div></main>
+</body>
+</html>
